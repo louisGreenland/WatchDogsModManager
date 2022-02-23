@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using System.IO;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace WatchDogsModManager
 {
@@ -20,13 +21,31 @@ namespace WatchDogsModManager
 
         List<Mod> mods;
 
+        IniFile ini;
+
         public ModManager() {
             InitializeComponent();
         }
 
         private void ModManager_Load(object sender, EventArgs e) {
+            ini = new IniFile();
+
             Directory.CreateDirectory("./Mods");
 
+            string tempPath = ini.Read("gamePath");
+            if(tempPath == "") {
+                MessageBox.Show("Game path not set. Please set the path using the 'Browse for Game' button");
+            }
+            else {
+                if (File.Exists(tempPath + "/bin/Watch_Dogs.exe")) {
+                    gamePath = tempPath;
+                    Console.WriteLine("Game path set to " + gamePath);
+                }
+                else {
+                    MessageBox.Show("Watch_Dogs.exe not found in " + tempPath);
+                }
+            }
+            
             mods = new List<Mod>();
 
             foreach (var modPath in Directory.GetDirectories("./Mods")) {
@@ -45,6 +64,8 @@ namespace WatchDogsModManager
                     gamePath = gamePathBrowser.SelectedPath;
                     MessageBox.Show("Game path set to " + gamePath);
                     Console.WriteLine("Game path set to " + gamePath);
+
+                    ini.Write("gamePath", gamePath);
                 }
                 else {
                     MessageBox.Show("Watch_Dogs.exe not found in " + gamePathBrowser.SelectedPath);

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IniFile.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModManager.cs">
       <SubType>Form</SubType>
