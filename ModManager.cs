@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 using System.IO;
 using System.Diagnostics;
-using Microsoft.Win32;
 
 namespace WatchDogsModManager
 {
@@ -30,8 +29,6 @@ namespace WatchDogsModManager
         private void ModManager_Load(object sender, EventArgs e) {
             ini = new IniFile();
 
-            Directory.CreateDirectory("./Mods");
-
             string tempPath = ini.Read("gamePath");
             if(tempPath == "") {
                 MessageBox.Show("Game path not set. Please set the path using the 'Browse for Game' button");
@@ -48,6 +45,7 @@ namespace WatchDogsModManager
             
             mods = new List<Mod>();
 
+            Directory.CreateDirectory("./Mods");
             foreach (var modPath in Directory.GetDirectories("./Mods")) {
                 Mod mod = new Mod();
                 mod.modPath = modPath;
@@ -56,6 +54,9 @@ namespace WatchDogsModManager
             }
 
             modListBox.Items.AddRange(mods.ToArray());
+
+            //File.Copy(gamePath + "/data_win64/patch.fat", "./patch.fat.bk", true);
+            //File.Copy(gamePath + "/data_win64/patch.dat", "./patch.dat.bk", true);
         }
 
         private void btn_getpath_Click(object sender, EventArgs e) {
@@ -83,8 +84,10 @@ namespace WatchDogsModManager
             Directory.CreateDirectory("./Working/Unpack");
 
             foreach (var mod in mods) {
-                Console.WriteLine("Copying " + mod.modName);
-                CopyFilesRecursively(mod.modPath, "./Working/Unpack");
+                if (mod.enabled) {
+                    Console.WriteLine("Copying " + mod.modName);
+                    CopyFilesRecursively(mod.modPath, "./Working/Unpack");
+                }
             }
 
             Process packProc = new Process();
@@ -97,6 +100,7 @@ namespace WatchDogsModManager
             packProc.Start();
             packProc.WaitForExit();
             Console.WriteLine("Finished creating Patch");
+
             //File.Copy("./Working/patch.fat", gamePath + "/data_win64", true);
             //File.Copy("./Working/patch.dat", gamePath + "/data_win64", true);
         }

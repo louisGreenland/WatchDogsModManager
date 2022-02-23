@@ -39,8 +39,9 @@ namespace WatchDogsModManager
             // 
             // modListBox
             // 
+            this.modListBox.BackColor = System.Drawing.Color.DarkGray;
             this.modListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.modListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modListBox.FormattingEnabled = true;
             this.modListBox.Location = new System.Drawing.Point(12, 79);
             this.modListBox.Name = "modListBox";
@@ -97,11 +98,11 @@ namespace WatchDogsModManager
             // toggleall
             // 
             this.toggleall.AutoSize = true;
-            this.toggleall.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleall.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toggleall.ForeColor = System.Drawing.Color.White;
             this.toggleall.Location = new System.Drawing.Point(12, 52);
             this.toggleall.Name = "toggleall";
-            this.toggleall.Size = new System.Drawing.Size(90, 21);
+            this.toggleall.Size = new System.Drawing.Size(97, 24);
             this.toggleall.TabIndex = 4;
             this.toggleall.Text = "Toggle All";
             this.toggleall.UseVisualStyleBackColor = true;
