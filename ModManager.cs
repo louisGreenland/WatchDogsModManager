@@ -42,21 +42,53 @@ namespace WatchDogsModManager
                     MessageBox.Show("Watch_Dogs.exe not found in " + tempPath);
                 }
             }
-            
-            mods = new List<Mod>();
 
-            Directory.CreateDirectory("./Mods");
-            foreach (var modPath in Directory.GetDirectories("./Mods")) {
-                Mod mod = new Mod();
-                mod.modPath = modPath;
-                mod.modName = new DirectoryInfo(modPath).Name;
-                mods.Add(mod);
-            }
+            LoadModList();
+            SaveModList();
 
             modListBox.Items.AddRange(mods.ToArray());
 
             //File.Copy(gamePath + "/data_win64/patch.fat", "./patch.fat.bk", true);
             //File.Copy(gamePath + "/data_win64/patch.dat", "./patch.dat.bk", true);
+        }
+
+        void LoadModList() {
+            mods = new List<Mod>();
+
+            //Search Mods folder for new mods
+            if (!File.Exists("./modlist.txt"))
+                File.Create("./modlist.txt");
+
+            string[] modNames = File.ReadAllLines("./modlist.txt");
+
+            foreach (var modName in modNames) {
+                if(Directory.Exists("./Mods/" + modName)) {
+                    Mod mod = new Mod();
+                    mod.modPath = "./Mods/" + modName;
+                    mod.modName = new DirectoryInfo(mod.modPath).Name;
+                    mod.enabled = true;
+                    mods.Add(mod);
+                }
+            }
+
+            foreach (var modPath in Directory.GetDirectories("./Mods")) {
+                string modName = new DirectoryInfo(modPath).Name;
+                if (!modNames.Contains(modName)) {
+                    Mod mod = new Mod();
+                    mod.modName = modName;
+                    mod.modPath = modPath;
+                    mod.enabled = true;
+                    mods.Add(mod);
+                }
+            }
+        }
+
+        void SaveModList() {
+            List<string> modNames = new List<string>();
+            foreach (var mod in mods) {
+                modNames.Add(mod.modName);
+            }
+            File.WriteAllLines("./modlist.txt", modNames.ToArray());
         }
 
         private void btn_getpath_Click(object sender, EventArgs e) {
@@ -125,7 +157,6 @@ namespace WatchDogsModManager
         }
 
         private void btn_install_Click(object sender, EventArgs e) {
-            Console.WriteLine("Apply Clicked");
             ApplyMods();
         }
 
@@ -141,6 +172,8 @@ namespace WatchDogsModManager
             modListBox.Items.Clear();
             modListBox.Items.AddRange(mods.ToArray());
             modListBox.SelectedIndex = j;
+
+            SaveModList();
         }
         
         private void btn_moveDown_Click(object sender, EventArgs e) {
@@ -155,6 +188,8 @@ namespace WatchDogsModManager
             modListBox.Items.Clear();
             modListBox.Items.AddRange(mods.ToArray());
             modListBox.SelectedIndex = j;
+
+            SaveModList();
         }
     }
 }
