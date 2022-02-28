@@ -9,7 +9,6 @@ namespace WatchDogsModManager
     class Mod
     {
         public string modName = "Mod";
-        public string modPath = "";
         public bool enabled;
 
         public override string ToString() {

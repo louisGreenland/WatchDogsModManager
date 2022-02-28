@@ -161,7 +161,6 @@ namespace WatchDogsModManager
             this.Load += new System.EventHandler(this.ModManager_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
