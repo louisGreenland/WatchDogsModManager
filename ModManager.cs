@@ -57,11 +57,6 @@ namespace WatchDogsModManager
                 mods[i].enabled = modListBox.GetItemChecked(i);
             }
 
-            if (!File.Exists("./patch.fat.bk")) { 
-                //File.Copy(gamePath + "/data_win64/patch.fat", "./patch.fat.bk", true);
-                //File.Copy(gamePath + "/data_win64/patch.dat", "./patch.dat.bk", true);
-            }
-
             FormClosed += ModManager_FormClosed;
         }
 
@@ -131,6 +126,12 @@ namespace WatchDogsModManager
             if (gamePath == null) {
                 MessageBox.Show("Game path not set");
                 return;
+            }
+
+            if (!File.Exists("./patch.fat.bk"))
+            {
+                File.Copy(gamePath + "/data_win64/patch.fat", "./patch.fat.bk", true);
+                File.Copy(gamePath + "/data_win64/patch.dat", "./patch.dat.bk", true);
             }
 
             Console.WriteLine("Creating working folder");
@@ -207,6 +208,11 @@ namespace WatchDogsModManager
             modListBox.Items.AddRange(mods.ToArray());
             modListBox.SelectedIndex = j;
 
+            for (int o = 0; o < mods.Count; o++)
+            {
+                modListBox.SetItemChecked(o, mods[o].enabled);
+            }
+
             SaveModList();
         }
         
@@ -224,6 +230,11 @@ namespace WatchDogsModManager
             modListBox.Items.Clear();
             modListBox.Items.AddRange(mods.ToArray());
             modListBox.SelectedIndex = j;
+
+            for (int o = 0; o < mods.Count; o++)
+            {
+                modListBox.SetItemChecked(o, mods[o].enabled);
+            }
 
             SaveModList();
         }
