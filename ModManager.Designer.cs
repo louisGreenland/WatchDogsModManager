@@ -39,20 +39,26 @@ namespace WatchDogsModManager
             // 
             // modListBox
             // 
-            this.modListBox.BackColor = System.Drawing.Color.DarkGray;
+            this.modListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
             this.modListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.modListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modListBox.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modListBox.ForeColor = System.Drawing.Color.White;
             this.modListBox.FormattingEnabled = true;
             this.modListBox.Location = new System.Drawing.Point(12, 79);
             this.modListBox.Name = "modListBox";
+            this.modListBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.modListBox.ScrollAlwaysVisible = true;
             this.modListBox.Size = new System.Drawing.Size(379, 630);
             this.modListBox.TabIndex = 0;
             // 
             // btn_install
             // 
-            this.btn_install.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.btn_install.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_install.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_install.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
+            this.btn_install.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_install.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_install.ForeColor = System.Drawing.Color.White;
             this.btn_install.Location = new System.Drawing.Point(12, 719);
@@ -69,8 +75,9 @@ namespace WatchDogsModManager
             // 
             // btn_moveDown
             // 
-            this.btn_moveDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.btn_moveDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_moveDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_moveDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
+            this.btn_moveDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_moveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_moveDown.ForeColor = System.Drawing.Color.White;
             this.btn_moveDown.Location = new System.Drawing.Point(397, 388);
@@ -83,8 +90,9 @@ namespace WatchDogsModManager
             // 
             // btn_moveUp
             // 
-            this.btn_moveUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.btn_moveUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_moveUp.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_moveUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
+            this.btn_moveUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_moveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_moveUp.ForeColor = System.Drawing.Color.White;
             this.btn_moveUp.Location = new System.Drawing.Point(397, 340);
@@ -110,6 +118,8 @@ namespace WatchDogsModManager
             // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(156, 719);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(439, 39);
@@ -128,8 +138,9 @@ namespace WatchDogsModManager
             // 
             // btn_getpath
             // 
-            this.btn_getpath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.btn_getpath.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_getpath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_getpath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
+            this.btn_getpath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_getpath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_getpath.ForeColor = System.Drawing.Color.White;
             this.btn_getpath.Location = new System.Drawing.Point(397, 667);
@@ -154,13 +165,13 @@ namespace WatchDogsModManager
             this.Controls.Add(this.btn_moveDown);
             this.Controls.Add(this.btn_install);
             this.Controls.Add(this.modListBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ModManager";
             this.Text = "Watch Dogs Mod Manager";
             this.Load += new System.EventHandler(this.ModManager_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

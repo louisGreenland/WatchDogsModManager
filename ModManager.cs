@@ -98,6 +98,7 @@ namespace WatchDogsModManager
         }
 
         void SaveModList() {
+            Console.WriteLine("Saving mod list to file");
             List<string> modLines = new List<string>();
             foreach (var mod in mods) {
                 string modString = mod.modName + "=" + (mod.enabled ? "true" : "false");
@@ -160,17 +161,19 @@ namespace WatchDogsModManager
             packProc.WaitForExit();
             Console.WriteLine("Finished creating Patch");
 
-            //File.Copy("./Working/patch.fat", gamePath + "/data_win64", true);
-            //File.Copy("./Working/patch.dat", gamePath + "/data_win64", true);
+            Console.WriteLine("Copying to game folder");
+            File.Copy("./Working/patch.fat", gamePath + "/data_win64/patch.fat", true);
+            File.Copy("./Working/patch.dat", gamePath + "/data_win64/patch.dat", true);
+
+            Console.WriteLine("Cleaning up working directory");
+            Directory.Delete("./Working/Unpack");
         }
 
         private static void CopyFilesRecursively(string sourcePath, string targetPath) {
-            //Now Create all of the directories
             foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories)) {
                 Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
             }
 
-            //Copy all the files & Replaces any files with the same name
             foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories)) {
                 File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
             }
@@ -181,6 +184,7 @@ namespace WatchDogsModManager
             for (int i = 0; i < modListBox.Items.Count; i++) {
                 modListBox.SetItemChecked(i, allChecked);
             }
+            UpdateModsEnabledState();
         }
 
         void UpdateModsEnabledState() {
@@ -193,7 +197,14 @@ namespace WatchDogsModManager
             ApplyMods();
         }
 
+        void ModListBox_ItemCheck(Object sender, ItemCheckEventArgs e)
+        {
+            
+        }
+
         private void btn_moveUp_Click(object sender, EventArgs e) {           
+            if (modListBox.SelectedIndex == -1) return;
+
             int i = modListBox.SelectedIndex;
             int j = modListBox.SelectedIndex - 1;
 
@@ -212,11 +223,11 @@ namespace WatchDogsModManager
             {
                 modListBox.SetItemChecked(o, mods[o].enabled);
             }
-
-            SaveModList();
         }
         
         private void btn_moveDown_Click(object sender, EventArgs e) {
+            if (modListBox.SelectedIndex == -1) return;
+
             int i = modListBox.SelectedIndex;
             int j = modListBox.SelectedIndex + 1;
 
@@ -235,12 +246,9 @@ namespace WatchDogsModManager
             {
                 modListBox.SetItemChecked(o, mods[o].enabled);
             }
-
-            SaveModList();
         }
 
-        private void ModManager_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e) {
-            UpdateModsEnabledState();
+        private void ModManager_FormClosed(object sender, FormClosedEventArgs e) {;
             SaveModList();
         }
     }
