@@ -26,6 +26,8 @@ namespace WatchDogsModManager
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModManager));
             this.modListBox = new System.Windows.Forms.CheckedListBox();
             this.btn_install = new System.Windows.Forms.Button();
             this.gamePathBrowser = new System.Windows.Forms.FolderBrowserDialog();
@@ -34,7 +36,12 @@ namespace WatchDogsModManager
             this.toggleall = new System.Windows.Forms.CheckBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.Title = new System.Windows.Forms.Label();
-            this.btn_getpath = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.menu_addmod = new System.Windows.Forms.MenuItem();
+            this.menu_browseforgame = new System.Windows.Forms.MenuItem();
+            this.menu_openmodsfolder = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // modListBox
@@ -47,11 +54,11 @@ namespace WatchDogsModManager
             this.modListBox.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modListBox.ForeColor = System.Drawing.Color.White;
             this.modListBox.FormattingEnabled = true;
-            this.modListBox.Location = new System.Drawing.Point(12, 79);
+            this.modListBox.Location = new System.Drawing.Point(12, 37);
             this.modListBox.Name = "modListBox";
             this.modListBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.modListBox.ScrollAlwaysVisible = true;
-            this.modListBox.Size = new System.Drawing.Size(379, 630);
+            this.modListBox.Size = new System.Drawing.Size(555, 672);
             this.modListBox.TabIndex = 0;
             // 
             // btn_install
@@ -61,9 +68,9 @@ namespace WatchDogsModManager
             this.btn_install.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_install.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_install.ForeColor = System.Drawing.Color.White;
-            this.btn_install.Location = new System.Drawing.Point(12, 719);
+            this.btn_install.Location = new System.Drawing.Point(12, 717);
             this.btn_install.Name = "btn_install";
-            this.btn_install.Size = new System.Drawing.Size(138, 39);
+            this.btn_install.Size = new System.Drawing.Size(198, 39);
             this.btn_install.TabIndex = 1;
             this.btn_install.Text = "Install Mods";
             this.btn_install.UseVisualStyleBackColor = false;
@@ -71,6 +78,7 @@ namespace WatchDogsModManager
             // 
             // gamePathBrowser
             // 
+            this.gamePathBrowser.Description = "Browse for game folder containing \'Watch_Dogs.exe\'";
             this.gamePathBrowser.ShowNewFolderButton = false;
             // 
             // btn_moveDown
@@ -80,9 +88,9 @@ namespace WatchDogsModManager
             this.btn_moveDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_moveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_moveDown.ForeColor = System.Drawing.Color.White;
-            this.btn_moveDown.Location = new System.Drawing.Point(397, 388);
+            this.btn_moveDown.Location = new System.Drawing.Point(577, 379);
             this.btn_moveDown.Name = "btn_moveDown";
-            this.btn_moveDown.Size = new System.Drawing.Size(198, 42);
+            this.btn_moveDown.Size = new System.Drawing.Size(223, 42);
             this.btn_moveDown.TabIndex = 2;
             this.btn_moveDown.Text = "Move Down";
             this.btn_moveDown.UseVisualStyleBackColor = false;
@@ -95,9 +103,9 @@ namespace WatchDogsModManager
             this.btn_moveUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_moveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_moveUp.ForeColor = System.Drawing.Color.White;
-            this.btn_moveUp.Location = new System.Drawing.Point(397, 340);
+            this.btn_moveUp.Location = new System.Drawing.Point(577, 331);
             this.btn_moveUp.Name = "btn_moveUp";
-            this.btn_moveUp.Size = new System.Drawing.Size(198, 42);
+            this.btn_moveUp.Size = new System.Drawing.Size(223, 42);
             this.btn_moveUp.TabIndex = 3;
             this.btn_moveUp.Text = "Move Up";
             this.btn_moveUp.UseVisualStyleBackColor = false;
@@ -108,7 +116,7 @@ namespace WatchDogsModManager
             this.toggleall.AutoSize = true;
             this.toggleall.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toggleall.ForeColor = System.Drawing.Color.White;
-            this.toggleall.Location = new System.Drawing.Point(12, 52);
+            this.toggleall.Location = new System.Drawing.Point(12, 7);
             this.toggleall.Name = "toggleall";
             this.toggleall.Size = new System.Drawing.Size(97, 24);
             this.toggleall.TabIndex = 4;
@@ -120,44 +128,74 @@ namespace WatchDogsModManager
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(156, 719);
+            this.progressBar1.Location = new System.Drawing.Point(216, 717);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(439, 39);
+            this.progressBar1.Size = new System.Drawing.Size(649, 39);
             this.progressBar1.TabIndex = 5;
             // 
             // Title
             // 
+            this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.White;
-            this.Title.Location = new System.Drawing.Point(13, 13);
+            this.Title.Location = new System.Drawing.Point(573, 37);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(219, 22);
+            this.Title.Size = new System.Drawing.Size(227, 22);
             this.Title.TabIndex = 6;
-            this.Title.Text = "Watch_Dogs Mod Installer";
+            this.Title.Text = "Watch_Dogs Mod Manager";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_getpath
+            // label1
             // 
-            this.btn_getpath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_getpath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
-            this.btn_getpath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_getpath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_getpath.ForeColor = System.Drawing.Color.White;
-            this.btn_getpath.Location = new System.Drawing.Point(397, 667);
-            this.btn_getpath.Name = "btn_getpath";
-            this.btn_getpath.Size = new System.Drawing.Size(198, 42);
-            this.btn_getpath.TabIndex = 7;
-            this.btn_getpath.Text = "Browse for Game";
-            this.btn_getpath.UseVisualStyleBackColor = false;
-            this.btn_getpath.Click += new System.EventHandler(this.btn_getpath_Click);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(573, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(276, 91);
+            this.label1.TabIndex = 8;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // mainMenu1
+            // 
+            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem1});
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.Index = 0;
+            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menu_openmodsfolder,
+            this.menu_addmod,
+            this.menu_browseforgame});
+            this.menuItem1.Text = "File";
+            // 
+            // menu_addmod
+            // 
+            this.menu_addmod.Index = 1;
+            this.menu_addmod.Text = "Add Mod";
+            this.menu_addmod.Visible = false;
+            // 
+            // menu_browseforgame
+            // 
+            this.menu_browseforgame.Index = 2;
+            this.menu_browseforgame.Text = "Browse for Game";
+            this.menu_browseforgame.Click += new System.EventHandler(this.menu_browseforgame_Click);
+            // 
+            // menu_openmodsfolder
+            // 
+            this.menu_openmodsfolder.Index = 0;
+            this.menu_openmodsfolder.Text = "Open Mods Folder";
+            this.menu_openmodsfolder.Click += new System.EventHandler(this.menu_openmodsfolder_Click);
             // 
             // ModManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(602, 764);
-            this.Controls.Add(this.btn_getpath);
+            this.ClientSize = new System.Drawing.Size(872, 762);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.toggleall);
@@ -166,6 +204,7 @@ namespace WatchDogsModManager
             this.Controls.Add(this.btn_install);
             this.Controls.Add(this.modListBox);
             this.MaximizeBox = false;
+            this.Menu = this.mainMenu1;
             this.Name = "ModManager";
             this.Text = "Watch Dogs Mod Manager";
             this.Load += new System.EventHandler(this.ModManager_Load);
@@ -184,6 +223,11 @@ namespace WatchDogsModManager
         private System.Windows.Forms.CheckBox toggleall;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Button btn_getpath;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MainMenu mainMenu1;
+        private System.Windows.Forms.MenuItem menuItem1;
+        private System.Windows.Forms.MenuItem menu_addmod;
+        private System.Windows.Forms.MenuItem menu_browseforgame;
+        private System.Windows.Forms.MenuItem menu_openmodsfolder;
     }
 }

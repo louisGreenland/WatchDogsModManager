@@ -31,7 +31,7 @@ namespace WatchDogsModManager
 
             string tempPath = ini.Read("gamePath");
             if(tempPath == "") {
-                MessageBox.Show("Game path not set. Please set the path using the 'Browse for Game' button");
+                MessageBox.Show("Game path not set. Please set the path under 'File > Browse for Game'");
             }
             else {
                 if (File.Exists(tempPath + "/bin/Watch_Dogs.exe")) {
@@ -49,9 +49,7 @@ namespace WatchDogsModManager
 
             for (int i = 0; i < mods.Count; i++) {
                 modListBox.SetItemChecked(i, mods[i].enabled);
-            }
-
-            SaveModList();            
+            }           
 
             for (int i = 0; i < modListBox.Items.Count; i++) {
                 mods[i].enabled = modListBox.GetItemChecked(i);
@@ -107,22 +105,6 @@ namespace WatchDogsModManager
             File.WriteAllLines("./modlist.txt", modLines.ToArray());
         }
 
-        private void btn_getpath_Click(object sender, EventArgs e) {
-            if (gamePathBrowser.ShowDialog() == DialogResult.OK) {
-                if (File.Exists(gamePathBrowser.SelectedPath + "/bin/Watch_Dogs.exe")) {
-                    gamePath = gamePathBrowser.SelectedPath;
-                    MessageBox.Show("Game path set to " + gamePath);
-                    Console.WriteLine("Game path set to " + gamePath);
-
-                    ini.Write("gamePath", gamePath);
-                }
-                else {
-                    MessageBox.Show("Watch_Dogs.exe not found in " + gamePathBrowser.SelectedPath);
-                    return;
-                }
-            }
-        }
-
         private void ApplyMods() {
             if (gamePath == null) {
                 MessageBox.Show("Game path not set");
@@ -166,7 +148,19 @@ namespace WatchDogsModManager
             File.Copy("./Working/patch.dat", gamePath + "/data_win64/patch.dat", true);
 
             Console.WriteLine("Cleaning up working directory");
-            Directory.Delete("./Working/Unpack");
+
+            DirectoryInfo dir = new DirectoryInfo("./Working/Unpack");
+
+            foreach (FileInfo f in dir.GetFiles())
+            {
+                f.Delete();
+            }
+            foreach (DirectoryInfo d in dir.GetDirectories())
+            {
+                d.Delete(true);
+            }
+
+            Console.WriteLine("Finished installing mods!");
         }
 
         private static void CopyFilesRecursively(string sourcePath, string targetPath) {
@@ -250,6 +244,32 @@ namespace WatchDogsModManager
 
         private void ModManager_FormClosed(object sender, FormClosedEventArgs e) {;
             SaveModList();
+        }
+
+        private void menu_browseforgame_Click(object sender, EventArgs e)
+        {
+            if (gamePathBrowser.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(gamePathBrowser.SelectedPath + "/bin/Watch_Dogs.exe"))
+                {
+                    gamePath = gamePathBrowser.SelectedPath;
+                    MessageBox.Show("Game path set to " + gamePath);
+                    Console.WriteLine("Game path set to " + gamePath);
+
+                    ini.Write("gamePath", gamePath);
+                }
+                else
+                {
+                    MessageBox.Show("Watch_Dogs.exe not found in " + gamePathBrowser.SelectedPath);
+                    return;
+                }
+            }
+
+        }
+
+        private void menu_openmodsfolder_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.StartupPath + "/Mods/");
         }
     }
 }

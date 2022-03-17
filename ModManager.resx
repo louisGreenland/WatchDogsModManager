@@ -120,4 +120,17 @@
   <metadata name="gamePathBrowser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>1. Place unpacked mods inside the 'mods' Folder
+2. Use 'Move' buttons to change load order.
+Mods are loaded in decending order
+3. Click the check mark to enable/disable mods
+4. Ensure game folder is set under 'File/Browse for Game'
+5. Click 'Install Mods'
+6. Enjoy!
+</value>
+  </data>
+  <metadata name="mainMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>167, 17</value>
+  </metadata>
 </root>
