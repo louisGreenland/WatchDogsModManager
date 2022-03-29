@@ -105,7 +105,14 @@ namespace WatchDogsModManager
             File.WriteAllLines("./modlist.txt", modLines.ToArray());
         }
 
-        private void ApplyMods() {
+        void InstallMods()
+        {
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork += BW_ApplyMods;
+            bw.RunWorkerAsync();
+        }
+
+        private void BW_ApplyMods(object sender, DoWorkEventArgs e) {
             if (gamePath == null) {
                 MessageBox.Show("Game path not set");
                 return;
@@ -161,6 +168,8 @@ namespace WatchDogsModManager
             }
 
             Console.WriteLine("Finished installing mods!");
+
+            MessageBox.Show("Finished installing mods!");
         }
 
         private static void CopyFilesRecursively(string sourcePath, string targetPath) {
@@ -188,7 +197,7 @@ namespace WatchDogsModManager
         }
 
         private void btn_install_Click(object sender, EventArgs e) {
-            ApplyMods();
+            InstallMods();
         }
 
         void ModListBox_ItemCheck(Object sender, ItemCheckEventArgs e)
