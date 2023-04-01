@@ -120,17 +120,87 @@
   <metadata name="gamePathBrowser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="label1.Text" xml:space="preserve">
-    <value>1. Place unpacked mods inside the 'mods' Folder
-2. Use 'Move' buttons to change load order.
-Mods are loaded in decending order
-3. Click the check mark to enable/disable mods
-4. Ensure game folder is set under 'File/Browse for Game'
-5. Click 'Install Mods'
-6. Enjoy!
+  <metadata name="addModDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>284, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>77</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAMIOAADCDgAAAAAAAAAA
+        AAAWFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FRUV/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xgYGP85OTn/Ghoa/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8VFRX/JCQk/3BwcP8qKir/FRUV/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xQUFP82Njb/UlJS/zs7
+        O/8VFRX/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/GBgY/0JC
+        Qv8zMzP/RERE/xoaGv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xUV
+        Ff8jIyP/QkJC/yIiIv9BQUH/JiYm/xUVFf8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FRUV/zAwMP84ODj/Ghoa/zc3N/8zMzP/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8aGhr/NTU1/y8vL/8WFhb/LS0t/zg4OP8cHBz/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FRUV/yQkJP8yMjL/Kioq/xQUFP8nJyf/NDQ0/ycnJ/8VFRX/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/LS0t/ysrK/8lJSX/FBQU/yIiIv8uLi7/MjIy/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xsbG/8vLy//MDAw/x8fH/8VFRX/HBwc/zIy
+        Mv8zMzP/HR0d/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8UFBT/LS0t/0JCQv87Ozv/GRkZ/xYW
+        Fv8XFxf/PT09/0RERP8yMjL/FBQU/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/GRkZ/y4uLv87Ozv/Jycn/yoq
+        Kv8XFxf/FhYW/xYWFv8sLCz/JCQk/zU1Nf8uLi7/GRkZ/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xUVFf85OTn/MjIy/xcX
+        F/8cHBz/KCgo/xUVFf8WFhb/FRUV/ykpKf8fHx//FRUV/ygoKP8yMjL/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FRUV/y8v
+        L/8jIyP/FBQU/yIiIv8jIyP/FRUV/xYWFv8VFRX/JCQk/yUlJf8VFRX/Hh4e/y4uLv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8VFRX/Hx8f/y0tLf8VFRX/Jycn/x4eHv8WFhb/FhYW/xUVFf8fHx//Kioq/xQUFP8pKSn/IiIi/xUV
+        Ff8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xUVFf8cHBz/Pj4+/xwcHP8pKSn/GBgY/xUVFf8VFRX/FRUV/xkZGf8sLCz/GBgY/zg4
+        OP8dHR3/FRUV/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xUVFf8bGxv/Kysr/zU1Nf9CQkL/Pz8//0JCQv8lJSX/JCQk/ycnJ/8oKCj/KSkp/zw8
+        PP87Ozv/QUFB/zIyMv8pKSn/Gxsb/xUVFf8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8bGxv/MDAw/z8/P/88PDz/MTEx/yUlJf8iIiL/PDw8/yIiIv8dHR3/Hx8f/x8f
+        H/8gICD/Nzc3/ykpKf8oKCj/MjIy/zw8PP8+Pj7/Li4u/xoaGv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/z4+Pv8+Pj7/KSkp/xwcHP8WFhb/FRUV/xUVFf8hISH/Li4u/xcX
+        F/8VFRX/FRUV/ycnJ/8mJib/FBQU/xUVFf8XFxf/ICAg/zAwMP9ISEj/Q0ND/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/MjIy/x4eHv8UFBT/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8vLy//HBwc/xYWFv8YGBj/Ly8v/xgYGP8WFhb/FhYW/xYWFv8VFRX/FBQU/yAgIP8yMjL/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xUVFf8gICD/Li4u/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FxcX/y8vL/8ZGRn/FhYW/xcXF/8tLS3/GRkZ/xYWFv8WFhb/FhYW/xYWFv8WFhb/LCws/x4e
+        Hv8VFRX/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8wMDD/Hx8f/xUV
+        Ff8WFhb/FhYW/xUVFf8bGxv/Li4u/xYWFv8WFhb/FRUV/yoqKv8fHx//FBQU/xUVFf8WFhb/FRUV/x8f
+        H/8sLCz/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FRUV/yAg
+        IP8wMDD/FRUV/xgYGP8eHh7/JiYm/zExMf8mJib/FRUV/xYWFv8VFRX/ICAg/zExMf8oKCj/ICAg/xkZ
+        Gf8WFhb/LS0t/x0dHf8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/y4uLv8wMDD/Ly8v/y0tLf8lJSX/HBwc/xYWFv8WFhb/FhYW/xYWFv8WFhb/Ghoa/yEh
+        If8qKir/Li4u/zAwMP8rKyv/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/GRkZ/x4eHv8YGBj/FRUV/xUVFf8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FRUV/xUVFf8XFxf/HBwc/xgYGP8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FRUV/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYWFv8WFhb/FhYW/xYW
+        Fv8WFhb/FhYW/xYWFv8WFhb/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
-  <metadata name="mainMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>167, 17</value>
-  </metadata>
 </root>
